@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8"/>
+        <link href="https://www.tamila.cl/assets/img/isotipo2.png" rel="icon"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    </head>
+
+    <body>
+        
+        <div class="container">
+            <div class="card border-primary mb-3">
+                <div class="card-header bg-primary text-white">
+                    <h1>Respuesta del pago</h1>
+                </div>
+                <div class="card-body text-primary">
+                
+                 <h3>TOKEN_WS: <span th:text="${token_ws}"></span></h3>
+                <ul> 
+                    <li>VCI: <span th:text="${respuesta.getVci()}"></span></li>
+                    <li>amount: <span th:text="${respuesta.amount}"></span></li>
+                    <li>status: <span th:text="${respuesta.status}"></span></li>
+                    <li>buy_order: <span th:text="${respuesta.buy_order}"></span></li>
+                    <li>session_id: <span th:text="${respuesta.session_id}"></span></li>
+                    <li>card_detail: <span th:text="${respuesta.getCard_detail().card_number   }"></span></li>
+                    <li>accounting_date: <span th:text="${respuesta.accounting_date}"></span></li>
+                    <li>transaction_date: <span th:text="${respuesta.transaction_date}"></span></li>
+                    <li>authorization_code: <span th:text="${respuesta.authorization_code}"></span></li>
+                    <li>payment_type_code: <span th:text="${respuesta.payment_type_code}"></span></li>
+                    <li>response_code: <span th:text="${respuesta.response_code}"></span></li>
+                    <li>installments_number: <span th:text="${respuesta.installments_number}"></span></li>
+                </ul>
+                 
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
